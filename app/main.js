@@ -6,7 +6,7 @@ async function getAgent() {
             throw new Error(response);
         } else{
             const data = await response.json();
-            console.log(data);
+            console.log(data.filter((data)=> data.isPlayableCharacter === true));
         }
     } catch (error) {
         console.log(error);
