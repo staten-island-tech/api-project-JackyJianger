@@ -1,7 +1,7 @@
 import "./style.css";
 
 const DOMSelectors = {
-    containerBox: document.querySelector('.main')
+    containerBox: document.getElementById('container')
 }
 async function getAgent() {
     try {
@@ -18,7 +18,7 @@ async function getAgent() {
                     "beforeend",
                     `<div class="agentCards">
                       <p>${agent.displayName}</p>
-                      <img class="images"src=${agent.bustProtrait}><img>
+                      <img class="images"src=${agent.displayIcon}><img>
                       <p>hi</p>
                     </div>`
                   );
