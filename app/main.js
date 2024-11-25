@@ -16,10 +16,10 @@ async function getAgent() {
                 console.log(agent);
                 DOMSelectors.containerBox.insertAdjacentHTML(
                     "beforeend",
-                    `<div class="agentCards">
+                    `<div class="agentCards bg-slate-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center">
                       <p>${agent.displayName}</p>
                       <img class="images"src=${agent.displayIcon}><img>
-                      <p>hi</p>
+                      <p>${agent.role.displayName}</p>
                     </div>`
                   );
             });
