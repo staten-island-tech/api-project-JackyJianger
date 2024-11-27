@@ -1,7 +1,8 @@
 import "./style.css";
 
 const DOMSelectors = {
-    containerBox: document.getElementById('container')
+    containerBox: document.getElementById('container'),
+    infoBtn: document.getElementById('abilityBtn')
 }
 async function getAgent() {
     try {
@@ -16,10 +17,11 @@ async function getAgent() {
                 console.log(agent);
                 DOMSelectors.containerBox.insertAdjacentHTML(
                     "beforeend",
-                    `<div class="agentCards hover:scale-110 hover:shadow-2xl  bg-slate-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center">
+                    `<div class="agentCards hover:scale-110 hover:shadow-2xl  bg-slate-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center" id=agentCards>
                       <p>${agent.displayName}</p>
                       <img class="images"src=${agent.displayIcon}><img>
                       <p>${agent.role.displayName}</p>
+                      <btn id='abilityBtn'>Abilities</btn>
                     </div>`
                   );
             });
@@ -34,7 +36,7 @@ async function getAgent() {
 getAgent()
 
 
-async function getAgentInfo() {
+/*async function getAgentInfo() {
     try {
         const response = await fetch('https://valorant-api.com/v1/agents');
         if (response.status != 200) {
@@ -61,4 +63,10 @@ async function getAgentInfo() {
         alert("Sorry could not find that agent")
     }
 }
+*/
 
+const InfoBtn = DOMSelectors.agentCards;
+InfoBtn.addEventListener("click", function () {
+  document.getElementById("container").innerHTML = "";
+
+});
