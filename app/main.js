@@ -18,11 +18,11 @@ async function getAgent() {
         console.log(agent);
         DOMSelectors.containerBox.insertAdjacentHTML(
           "beforeend",
-          `<div class="agentCards hover:scale-110 hover:shadow-2xl  bg-slate-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center" id=agentCards>
+          `<div class="agentCards hover:scale-110 hover:shadow-2xl  border-2 border-zinc-950 bg-slate-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center" id=agentCards>
                       <p>${agent.displayName}</p>
                       <img class="images"src=${agent.displayIcon}><img>
                       <p>${agent.role.displayName}</p>
-                      <button class="deleteBtn" data-uuid="${agent.uuid}"> Abilities </button>
+                      <button class="deleteBtn border-2 border-zinc-950 bg-slate-300" data-uuid="${agent.uuid}"> Abilities </button>
                     </div>`
         );
       });
@@ -42,7 +42,7 @@ DOMSelectors.containerBox.addEventListener("click", async function (event) {
     console.log(`Button clicked with UUID: ${uuid}`);
     DOMSelectors.containerBox.insertAdjacentHTML(
       "beforeend",
-      `<button class="goBack">Back</button>`
+      `<button class="goBack border-2 border-zinc-950 bg-slate-300">Back</button>`
     );
 
     try {
@@ -58,7 +58,7 @@ DOMSelectors.containerBox.addEventListener("click", async function (event) {
       abilities.forEach((ability) => {
         DOMSelectors.containerBox.insertAdjacentHTML(
           "beforeend",
-          `<div class="agentCards hover:scale-110 hover:shadow-2xl  bg-red-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center" id=agentCards>
+          `<div class="agentCards hover:scale-110 hover:shadow-2xl  border-2 border-zinc-950 bg-red-100 w-2/12 h-500 shadow-xl border-slate-50 p-5 m-1 flex flex-col justify-between items-center" id=agentCards>
                         <p>${ability.displayName}</p>
                         <img class="images"src=${ability.displayIcon}><img>
                         <p>${ability.slot}</p>
